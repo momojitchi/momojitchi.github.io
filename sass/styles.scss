@@ -1,0 +1,22 @@
+// Main CSS file
+// =============
+// Import files from the most abstract to the most specific
+
+
+//--- 1. Mixins, placeholders, reset
+@import '01_abstracts/abstracts-config';
+
+//--- 2. Fonts, font-icons,
+@import '02_base/base-config';
+
+//--- 3. Global components : Headings, buttons, tags, modals, accordions...
+@import '03_components/components-config';
+
+//--- 4. Layout : header, footer, menus... 
+@import '04_layout/layout-config';
+
+//--- 5. Modules : banners, app specific components... 
+@import '05_modules/modules-config';
+
+//--- 6. Pages overrides 
+@import '06_pages/pages-config';

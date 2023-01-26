@@ -1,0 +1,21 @@
+// Abstracts - Snippets
+//===================
+// Class utilities and global snippets
+
+//--- 1. Responsive utilities
+.desktopOnly {
+    @include for-tablet-and-lower {
+      display: none;
+    }
+  }
+
+.mobileOnly {
+    @include for-desktop {
+        display: none;
+    }
+  }
+
+//--- 2. Color utilities
+//--- 3. Position utilities
+//--- 4. Margin utilities
+//--- 5. Fonts utilities

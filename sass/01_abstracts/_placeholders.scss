@@ -1,0 +1,56 @@
+// Abstracts - Placeholders
+//=========================
+
+
+//--- 1. MANUAL RESETS
+//--- 1.1 Reset buttons default styles
+%reset-button {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    appearance: none;
+    cursor: pointer;
+  
+    &:focus {
+      outline: 0;
+    }
+  }
+  
+//--- 1.2 Reset inputs default styles
+  %reset-input {
+    margin: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    white-space: normal;
+  }
+  
+//--- 2. BACKGROUNDS UTILITIES
+//--- 2.1 Usual cover background image
+  %bg-cover {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  
+
+  
+//--- 3. Tools
+//--- 3.1 - Accessibility hidden tool
+  %a11y-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  

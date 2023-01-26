@@ -1,0 +1,47 @@
+// Global project configuration
+// -----------------------------
+
+//---  1. Project configuration
+///--- Global Configuration
+$project-name: 'momojitchi'; // Use #{$project-name} on class names
+$img-path: '../img';
+$font-path: '../fonts';
+
+///--- Global variables
+$global-bd-rad: 1.2rem;
+$global-bx-shw: 0 6px 12px rgba(74, 100, 160, 0.1);
+
+///--- 2.1 Fonts
+$font-default: Helvetica, Arial, 'Trebuchet MS', sans-serif;
+$font-global: 'Luciole', $font-default;
+$font-heading: 'Gochi Hand', $font-default;
+$font-global-size: 62.5%;
+$font-body-size: 1.6rem;
+$font-body-l-hgt: 140%;
+
+// Typescaling
+  // Typescale
+ $font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+ $font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+ $font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+ $font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+ $font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+ $font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+ $font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+
+
+//--- 2. Project identity
+///--- Logo
+$logo-default: url('#{$img-path}/alentour-logo.svg');
+$logo-text-white: url('#{$img-path}/alentour-logo-text-white.svg');
+$logo-text-blue: url('#{$img-path}/alentour-logo-text-color.svg');
+$logo-header: $logo-default;
+$logo-header-hgt: 5rem;
+$logo-header-wth: 5rem;
+$logo-header-icon-wth: $logo-header-wth;
+$logo-entrance: $logo-text-white;
+$logo-entrance-hgt: 6.3rem;
+$logo-entrance-wth: 30.4rem;
+$logo-onboarding: $logo-text-blue;
+$logo-onboarding-hgt: $logo-entrance-hgt;
+$logo-onboarding-wth: $logo-entrance-wth;

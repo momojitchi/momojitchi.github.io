@@ -1,0 +1,73 @@
+// Base - Global
+//===================
+// Global page style
+
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    color: var(--text-color);
+    font-family: $font-global;
+    font-size: $font-size-base;
+    font-weight: normal;
+    line-height: $font-body-l-hgt;
+    @include font-smoothing(on);
+    background: var(--background-global);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @include for-desktop {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      justify-content: space-around;
+    }
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  
+  table {
+    border-collapse: collapse;
+  }
+  
+  p {
+    margin-top: 0;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin-top: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  //--- Main
+  .#{$project-name}-global {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  .#{$project-name}-main {
+    flex-grow: 1;
+  }
+  
+  //--- Global modifiers
+  .is-blurred {
+    filter: blur(8px);
+  }
+  
+  //--- A11y specific classes
+  .sr-only {
+    @extend %a11y-hidden; 
+  }

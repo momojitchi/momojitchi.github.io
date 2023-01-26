@@ -1,0 +1,44 @@
+// Base : Breakpoints
+//========================
+// Responsive configuration
+
+$screen-sm: 768px;
+$screen-md: 1024px;
+$screen-lg: 1200px;
+$screen-xl: 1440px;
+
+@mixin for-mobile {
+  @media screen and (max-width: $screen-sm - 1px) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media screen and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-and-upper {
+  @media screen and (min-width: $screen-sm) {
+    @content;
+  }
+}
+
+@mixin for-tablet-and-lower {
+  @media screen and (max-width: $screen-md - 1px) {
+    @content;
+  }
+}
+
+@mixin for-desktop {
+  @media screen and (min-width: $screen-md) {
+    @content;
+  }
+}
+
+@mixin for-large-screen {
+  @media screen and (min-width: $screen-xl) {
+    @content;
+  }
+}

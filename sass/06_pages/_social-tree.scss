@@ -1,0 +1,186 @@
+// CSS pour la page
+// ----------------
+// Container
+// ---
+.socialtree {
+  display: flex;
+  flex-direction: column;
+
+  width: 90%;
+  margin: auto;
+  padding: 3rem 1rem 1rem 1rem;
+  border-radius: 20px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 5px 5px 0px #8BBEAD;
+  border-radius: 25px 25px 0 0;
+  @include for-desktop {
+    border-radius: 25px;
+  }
+
+  h1, h2 {
+    font-family: $font-heading;
+  }
+  h1 { 
+    font-size: $font-size-xl;
+  }
+  h2 {
+    font-size: $font-size-lg;
+  }
+
+}
+
+
+// Illustration 
+.socialtree-logo {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  position: relative;
+  top: 10px;
+  z-index: -1;
+}
+
+
+//Header
+// ---
+.socialtree-head {
+  margin-bottom: 2rem;
+
+  p.detail  {
+    padding: 0;
+    margin: 1rem 0;
+    letter-spacing: -1px;
+    font-size: $font-size-base;
+    @include for-tablet-and-lower {
+      margin-top: 2rem;
+      text-align: left;
+    }
+  }
+}
+
+
+.socialtree-head_title {
+  display: flex;
+  flex-direction: column;
+  > h1, p {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    color: #16447E;
+    font-size: $font-size-xxl;
+    filter: drop-shadow(2px 6px 0px #fff);
+    line-height: 0.25em;
+  }
+  p {
+    margin-top: 1rem;
+    color: #16447E;
+    font-family: $font-heading;
+    font-size: $font-size-lg;
+    filter: drop-shadow(1px 3px 0px #fff);
+  }
+}
+
+// Catégories des liens 
+.socialtree-content {
+  section {
+    // background-color: purple;
+    @include for-tablet-and-lower {
+      + section {
+        margin-top: 3rem;
+      }
+    }
+  }
+  h2 {
+    margin: 0 0 0.5rem 0;
+    color: #DC4A93;
+    @include for-tablet-and-lower {
+      text-align: left;
+    }
+  }
+
+  // Desktop overrides
+  @include for-desktop {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    section {
+      width: 32%;
+    }
+  }
+}
+
+
+// Liste de liens
+// ---
+.socialist {
+  margin: 0;
+  padding: 0;
+  &_item {
+    display: block;
+    list-style: none;
+    width: 100%;
+    a {
+      display: block;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 5px 5px 0px var(--link-color);
+      border-radius: 15px;
+      padding: 1rem;
+      color: var(--link-color);
+      font-weight: bold;
+      font-size: $font-size-md;
+      @include transition();
+
+      // Color variant 
+      #online-shops & { 
+        background-color: #FFECCE; 
+        box-shadow: 5px 5px 0px #FFB340; 
+        &:hover {
+          background-color: #FFB340; 
+        }
+      }
+      #contact-links & { 
+        background-color: #FFDAE1; 
+        box-shadow: 5px 5px 0px #FC7F96; 
+        &:hover {
+          background-color: #FC7F96; 
+        }
+      }
+      #random-links & { 
+        background-color: #DAEBF2; 
+        box-shadow: 5px 5px 0px #8BB2BE; 
+        &:hover {
+          background-color: #8BB2BE; 
+        }
+      }
+    }
+  }
+  .socialist_item + .socialist_item {
+    margin-top: 1rem;
+  }
+}
+
+// Footer 
+.socialtree-footer {
+  margin-top: 1rem;
+  font-size: $font-size-sm;
+  font-family: $font-heading;
+}
+
+
+// CSS Pattern test 
+.pattern-css {
+  background-color: var(--pattern-bg);
+  opacity: 1;
+  background-image:  linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(to right, #ffffff 1px, var(--pattern-bg) 1px);
+  background-size: 40px 40px;
+}
+// Choppé sur : https://www.magicpattern.design/tools/css-backgrounds
+
+.white-gradient {
+  background: linear-gradient(rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+}

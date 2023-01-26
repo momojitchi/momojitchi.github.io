@@ -1,0 +1,163 @@
+// Abstracts - Mixins
+//===================
+
+//--- Font-Smoothing
+// Fix aliasiang on some wefonts (turn on or off)
+@mixin font-smoothing($value: on) {
+    @if $value== 'on' {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    } @else {
+      -webkit-font-smoothing: subpixel-antialiased;
+      -moz-osx-font-smoothing: auto;
+    }
+  }
+  
+//--- User-select
+// Disable user selection on items (prevent from copy/pastin some images or icons)
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select; // IE10+
+  -o-user-select: $select;
+  user-select: $select;
+}
+  
+//--- Text-overflow
+// Make an ellipsis display on too long text content
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  display: block;
+}
+
+//--- Word-breaking
+// Avoid usual word-breaking issues
+@mixin word-breaking() {
+  word-break: break-word;
+}
+
+//--- Pre-line
+// Keep spaces/br in text paragraph
+@mixin pre-line() {
+  white-space: pre-line;
+  margin-top: -2.1rem;
+}
+
+//--- Lazy square (OLD)
+// Lazy mixin for identical height/width parameters
+@mixin square($dimension) {
+  width: $dimension;
+  height: $dimension;
+}
+
+//--- Placeholder customisation
+// Placeholder customisation with browsers specificities
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+  
+//--- CSS Circles
+// Custom CSS circles, can display texte inside of it
+@mixin circle($size: 1rem, $background: #fff) {
+  height: $size;
+  width: $size;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: $background;
+  border-radius: 100%;
+  text-align: center;
+}
+  
+//--- CSS Triangles
+// Same as Bourbon CSS Triangles, make easy arrow/display
+@mixin triangle($size, $color, $direction) {
+  height: 0;
+  width: 0;
+
+  @if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left) {
+    border-width: $size / 2;
+    border-style: solid;
+    border-color: transparent;
+
+    @if $direction == up {
+      border-bottom-color: $color;
+    } @else if $direction == right {
+      border-left-color: $color;
+    } @else if $direction == down {
+      border-top-color: $color;
+    } @else if $direction == left {
+      border-right-color: $color;
+    }
+  } @else if ($direction == up-right) or ($direction == up-left) {
+    border-top: $size solid $color;
+
+    @if $direction == up-right {
+      border-left: $size solid transparent;
+    } @else if $direction == up-left {
+      border-right: $size solid transparent;
+    }
+  } @else if ($direction == down-right) or ($direction == down-left) {
+    border-bottom: $size solid $color;
+
+    @if $direction == down-right {
+      border-left: $size solid transparent;
+    } @else if $direction == down-left {
+      border-right: $size solid transparent;
+    }
+  }
+}
+  
+//--- Transition 
+// Lazy transition mixin with variables settings for iso animations
+$transition-property-default: all;
+$transition-duration-default: 250ms;
+$transition-timing-function-default: ease-in-out;
+$transition-delay-default: 0ms;
+
+@mixin transition(
+  $property: $transition-property-default,
+  $duration: $transition-duration-default,
+  $timing-function: $transition-timing-function-default,
+  $delay: $transition-delay-default
+) {
+  transition: $property $duration $timing-function $delay;
+}
+
+
+//--- Central position Mixin
+// This one isn't mine, isn't it ?  
+@mixin alignmentAbsolute($direction) {
+  @if $direction == vertical {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @if $direction == horizontal {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @if $direction == both {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}

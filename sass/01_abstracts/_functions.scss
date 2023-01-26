@@ -1,0 +1,7 @@
+// Abstracts : Functions
+//======================
+
+//--- Convert hex into rgb
+@function hexToRGB($hex) {
+    @return red($hex), green($hex), blue($hex);
+  }
