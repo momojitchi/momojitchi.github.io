@@ -39,6 +39,9 @@
   position: relative;
   top: 10px;
   z-index: -1;
+  @include for-tablet-and-lower {
+    height: 150px;
+  }
 }
 
 
