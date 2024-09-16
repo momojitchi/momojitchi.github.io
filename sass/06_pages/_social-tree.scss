@@ -12,7 +12,7 @@
   border-radius: 20px;
   text-align: center;
   background-color: #fff;
-  box-shadow: 5px 5px 0px #8BBEAD;
+  box-shadow: 5px 5px 0px #ECA3B6;
   border-radius: 25px 25px 0 0;
   @include for-desktop {
     border-radius: 25px;
@@ -72,14 +72,14 @@
   }
 
   h1 {
-    color: #16447E;
+    color: #0a3a75;
     font-size: $font-size-xxl;
     filter: drop-shadow(2px 6px 0px #fff);
     line-height: 0.25em;
   }
   p {
     margin-top: 1rem;
-    color: #16447E;
+    color: #0a3a75;
     font-family: $font-heading;
     font-size: $font-size-lg;
     filter: drop-shadow(1px 3px 0px #fff);
@@ -141,9 +141,9 @@
       // Color variant 
       #online-shops & { 
         background-color: #FFECCE; 
-        box-shadow: 5px 5px 0px #FFB340; 
+        box-shadow: 5px 5px 0px #FFBA49; 
         &:hover {
-          background-color: #FFB340; 
+          background-color: #FFBA49; 
         }
       }
       #contact-links & { 
@@ -154,10 +154,10 @@
         }
       }
       #random-links & { 
-        background-color: #DAEBF2; 
-        box-shadow: 5px 5px 0px #8BB2BE; 
+        background-color: #D7F1FE; 
+        box-shadow: 5px 5px 0px #9DDDFC; 
         &:hover {
-          background-color: #8BB2BE; 
+          background-color: #9DDDFC; 
         }
       }
     }
@@ -174,16 +174,28 @@
   font-family: $font-heading;
 }
 
-
-// CSS Pattern test 
-.pattern-css {
-  background-color: var(--pattern-bg);
-  opacity: 1;
-  background-image:  linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(to right, #ffffff 1px, var(--pattern-bg) 1px);
-  background-size: 40px 40px;
-}
+// ---------
+// CSS Pattern 
+// Quadrillage 2023  
+// ---------
+//.pattern-css {
+//  background-color: var(--pattern-bg);
+//  opacity: 1;
+//  background-image:  linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(to right, #ffffff 1px, var(--pattern-bg) 1px);
+//  background-size: 40px 40px;
+//}
 // Choppé sur : https://www.magicpattern.design/tools/css-backgrounds
+
+// ---------
+// 2024 Pattern
+// ---------
+.pattern-css {
+  background: url('../img/cards/logo_pattern.png'), linear-gradient(180deg, #D7F1FE 0%, #DCF9E3 35%, #FFECCE 60%, #FFDAE1 100%);
+  background-blend-mode: soft-light, normal;
+}
 
 .white-gradient {
   background: linear-gradient(rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
 }
+
+
